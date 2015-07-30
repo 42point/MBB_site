@@ -1,5 +1,4 @@
 (function() {
-
     var $b = $('body');
     var $w = $(window);
 
@@ -48,6 +47,7 @@
             });
 
             info = 'Выбрано ' + totalCount + ' призов на ' + totalPrice + ' баллов';
+            $('#send-present').prop('disabled', totalPrice <= 49);
             $presentsInfo.html(info);
         }
 
@@ -121,75 +121,31 @@
 
     $('.tire-request-form').each(function (i, form) {
         form = $(form);
-        var hiddenInputTpl = '<input type="hidden" name="number[]">';
-        var submit = form.find('.tire-request-form__submit');
         var button = form.find('.tire-request-form__add-button');
+        var inputs = form.find('select');
 
-        form.on('click', '.tire-request-form__reset', function (evt) {
-            evt.preventDefault();
-
-            form.find('.tire-request-form__input').val('').focus();
-            form.find('input[type="hidden"]').remove();
-            button.attr('disabled', true);
-            countTotal();
-        });
-
-        form.on('click', '.tire-request-form__add-button', function (evt) {
-            evt.preventDefault();
-            var button = $(evt.currentTarget);
-            var row = button.closest('.form-row');
-            var input = row.find('.tire-request-form__input');
-            if (button.attr('disabled')) {
-                return;
-            }
-
-            var hiddenInput = $(hiddenInputTpl);
-            hiddenInput.val(input.val());
-            hiddenInput.appendTo(form);
-
-            input.val('').focus();
-            button.attr('disabled', true);
-            countTotal();
+        inputs.on('change', function () {
             validate();
         });
-
-        form.on('input', '.tire-request-form__input', function (evt) {
-            var input = $(evt.currentTarget);
-            var row = input.closest('.form-row');
-            var error = row.find('.form-row__message_error');
-            var button = row.find('.btn');
-
-            error.remove();
-            button.attr('disabled', !input.val().trim());
-            validate();
-        });
-
-        function getHiddenInputs() {
-            return form.find('input[type="hidden"]');
-        };
-
-        function countTotal() {
-            var inputs = getHiddenInputs();
-            form.find('.tire-request-form__total-value').html(inputs.length);
-        };
 
         function validate() {
-            var inputs = getHiddenInputs();
             var valid = true;
-            if (inputs.length < 5) {
-                valid = false;
-            }
-            if (valid) {
-                inputs.each(function (i, input) {
-                    if (input.value.trim() === 0) {
-                        valid = false;
-                    }
-                });
-            }
+            inputs.each(function (i, input) {
+                if (!$(input).val()) {
+                    valid = false;
+                }
+            });
 
-            submit.attr('disabled', !valid);
+            button.attr('disabled', !valid);
         };
 
+    });
+
+    $('.disable-on-submit').on('submit', function (evt) {
+        if (!evt.defaultPrevented) {
+            var button = $(evt.target).find(':input[type="submit"]');
+            button.attr('disabled', true);
+        }
     });
 
 })();

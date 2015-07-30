@@ -728,12 +728,19 @@ label.inline {
   display: inline;
 }
 fieldset {
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 legend {
   color: #000000;
   font-size: 12px;
   font-weight: bold;
+}
+legend.big {
+  font-size: 16px;
+}
+legend i {
+  color: #999;
 }
 legend .icon {
   top: -3px;
@@ -753,6 +760,9 @@ legend .icon {
 }
 .form-row {
   margin-top: 15px;
+}
+.form-row_center {
+  text-align: center;
 }
 .form-row__heading {
   color: #000;
@@ -1259,6 +1269,9 @@ a {
   cursor: pointer;
   display: block;
   font-size: 12px;
+  margin-right: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   position: relative;
   white-space: nowrap;
   width: auto;
@@ -1374,6 +1387,7 @@ a {
 }
 .custom-select__dropdown li a {
   border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   color: #999;
   display: block;
   padding: 3px 1px;
@@ -1934,9 +1948,6 @@ input.tire-request-form__input {
   text-transform: uppercase;
   width: 410px;
 }
-.tire-request-form__add-button {
-  margin-left: 60px;
-}
 
 .tire-request-form .btn {
   margin-top: 10px;
@@ -1961,4 +1972,29 @@ input.tire-request-form__input {
 }
 .tires-footer a {
   text-decoration: underline;
+}
+
+.features-table {
+  min-width: 500px;
+}
+.features-table th {
+  background-color: #99b2d6;
+  background-image: -webkit-linear-gradient(top, #99b2d6, #6a90b7);
+  background-image:         linear-gradient(to bottom, #99b2d6, #6a90b7);
+  color: #fff;
+  vertical-align: top;
+}
+.features-table th,
+.features-table td {
+  padding: 10px;
+  text-align: left;
+}
+.features-table td {
+  background: #e2e8ec;
+}
+.features-table tr:nth-child(odd) td {
+  background: #dae0e5;
+}
+.features-table input[type="text"] {
+  width: 100px;
 }
