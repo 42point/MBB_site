@@ -1,0 +1,124 @@
+.custom-select {
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+
+    &_disabled &__title {
+        background: #fff;
+        color: #ccc;
+        cursor: default;
+    }
+    a {
+        text-decoration: none;
+    }
+
+    &__title {
+        .btn;
+
+        color: #3f3f3f;
+        cursor: pointer;
+        display: block;
+        font-size: 12px;
+        position: relative;
+        white-space: nowrap;
+        width: auto;
+        z-index: 6;
+
+        .box-sizing();
+
+        &:after {
+            content: '\0020';
+            position: absolute;
+            right: 8px;
+            top: 11px;
+            z-index: 8;
+
+            border-top: 4px solid #af840a;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+        }
+
+    }
+
+    &__dropdown {
+        background: #fff;
+        border-bottom: 1px solid #eacc2e;
+        border-top: 1px solid #f4e893;
+        display: none;
+        font-size: 12px;
+        left: 0;
+        list-style: none;
+        max-height: 300px;
+        outline: none !important;
+        overflow: auto;
+        padding: 5px 0;
+        position: absolute;
+        text-align: left;
+        top: 0;
+        width: 100%;
+        z-index: 7;
+
+        .gradient(#f6f811, #ebcd2e);
+
+        li {
+            height: 25px;
+            line-height: 24px;
+            white-space: nowrap;
+
+            a {
+                border-top: 1px solid #ccc;
+                color: #999;
+                display: block;
+                padding: 3px 1px;
+                margin: 0 5px;
+                font-size: 12px;
+                text-decoration: none;
+
+                &:hover,
+                &.selected {
+                    color: #333;
+                }
+            }
+
+            &:first-child a {
+                border-top: none;
+            }
+        }
+
+    }
+}
+
+.present-item {
+    .custom-select {
+
+        &__title {
+            background: #fff;
+            border: 2px solid #cacaca;
+            height: 24px;
+            line-height: 24px;
+            min-width: 0;
+            width: auto;
+
+            &:after {
+                top: 9px;
+            }
+        }
+
+        &__dropdown {
+            background: #fff;
+            border: 2px solid #cacaca;
+            padding-top: 0;
+
+            .box-sizing();
+
+            li {
+                line-height: 24px;
+                height: 24px;
+            }
+
+            a {
+                padding: 0 1px;
+            }
+        }
+    }
+}

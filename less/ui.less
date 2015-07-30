@@ -1,0 +1,155 @@
+.btn {
+    border: none;
+    border-left: 1px solid #f4e893;
+    border-bottom: 1px solid #eacc2e;
+    border-top: 1px solid #f4e893;
+    color: #3f3f3f;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 27px;
+    line-height: 27px;
+    margin-right: 5px;
+    padding: 0 30px 0 10px;
+    position: relative;
+    min-width: 170px;
+    text-decoration: none !important;
+
+    .box-sizing();
+    .gradient(#f6f811, #ebcd2e);
+
+    &_width-auto {
+        min-width: 0;
+    }
+
+    &_arr:after,
+    &_arr:before {
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid #3f3f3f;
+        border-top: 4px solid transparent;
+        content: '\0020';
+        display: inline-block;
+        font-size: 0;
+        height: 0;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 0;
+    }
+    &_arr:before {
+        top: 11px;
+        border-left-color: #f9f3ab;
+    }
+
+    &_arr-invert:before,
+    &_arr-invert:after {
+        border-left: none;
+        border-right: 4px solid #3f3f3f;
+    }
+    &_arr-invert:before {
+        border-right-color: #f9f3ab;
+    }
+
+    &_grey,
+    &_disabled,
+    &[disabled],
+    &_loading {
+        border-left: 1px solid #c3c3c3;
+        border-top: 1px solid #c3c3c3;
+        border-bottom: 1px solid #bbbbbb;
+
+        .gradient(#efefef, #bbbbbb);
+    }
+    &_disabled,
+    &[disabled] {
+        cursor: default;
+    }
+    &_loading {
+        cursor: default;
+        text-indent: -9999px;
+
+        &:after {
+            display: none;
+        }
+        &:before {
+            background: url(../images/spinner.gif);
+            border: none;
+            font-size: 0;
+            height: 16px;
+            left: 50%;
+            margin-left: -8px;
+            padding: 0;
+            position: absolute;
+            top: 4px;
+            width: 16px;
+        }
+    }
+}
+
+.icon {
+    background: url(../images/sprite.png) no-repeat;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+
+    &_user {
+        background-position: -1px -2px;
+        height: 16px;
+        width: 12px;
+    }
+    &_company {
+        background: url(../images/sprite.png) 0 -33px;
+        height: 16px;
+        width: 15px;
+    }
+
+    &_coupons {
+        background-position: -15px -2px;
+        height: 29px;
+        width: 22px;
+    }
+
+    &_coupons-big {
+        background-position: -85px -129px;
+        height: 45px;
+        width: 34px;
+    }
+
+    &_cert {
+        background-position: -1px -129px;
+        height: 45px;
+        width: 34px;
+    }
+    &_cert-small {
+        background-position: -36px -129px;
+        height: 29px;
+        width: 22px;
+    }
+
+    &_address {
+        background-position: -38px 0;
+        height: 16px;
+        width: 11px;
+    }
+    &_phone {
+        background-position: -49px 0;
+        height: 16px;
+        width: 16px;
+    }
+    &_email {
+        background-position: -65px 0;
+        height: 13px;
+        width: 16px;
+    }
+
+    &_model-car {
+        background-position: -84px 0;
+        height: 18px;
+        width: 30px;
+    }
+    &_model-trailer {
+        background-position: -115px -2px;
+        height: 16px;
+        width: 31px;
+    }
+}

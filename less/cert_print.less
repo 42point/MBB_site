@@ -1,0 +1,83 @@
+body.print {
+    background: none;
+}
+
+@scale: 0.55;
+@width: 1240px * @scale;
+@print-coupon-height: 441px * @scale;
+@print-coupon-width: @width;
+
+.print-page {
+    margin: 0 auto;
+    width: @width;
+}
+
+.print-cert {
+    background: url(../images/cert_print.jpg) 0 0 no-repeat;
+    font-family: Impact, sans-serif;
+    height: 481px;
+    position: relative;
+    text-align: center;
+    width: @width;
+
+    table {
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    &__title {
+        color: #125da5;
+        font-size: 40px;
+        font-weight: bold;
+        padding-top: 100px;
+        text-shadow: 2px 2px #69554b;
+    }
+
+    &__subtitle {
+        font-size: 25px;
+    }
+
+
+    &__text {
+        color: #ffd644;
+        font-size: 14px;
+        font-weight: normal;
+        text-transform: uppercase;
+        text-shadow: 2px 2px #69554b;
+        padding-top: 20px;
+    }
+
+    &__data {
+        padding-top: 20px;
+    }
+    &__data-item {
+        border-bottom: 1px solid #d4d4d4;
+        margin-top: 12px;
+        width: 70%;
+    }
+    &__data-key {
+        color: #ffd644;
+        float: left;
+        font-size: 14px;
+        background: #fff;
+        padding: 5px 10px 5px 0;
+        margin-bottom: -5px;
+        text-transform: uppercase;
+        text-shadow: 2px 2px #69554b;
+    }
+    &__data-value {
+        color: #666;
+        float: right;
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+        position: relative;
+        top: 5px;
+    }
+
+    &__hint {
+        font-size: round(16px * @scale);
+        font-family: Arial, sans-serif;
+        text-align: left;
+        padding: 30px 40% 0 0;
+    }
+}

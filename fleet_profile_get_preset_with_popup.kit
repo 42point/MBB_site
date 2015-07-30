@@ -1,0 +1,200 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Mishlen</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+</head>
+
+<body>
+
+
+    <div class="popup-overlay" id="popup-overlay"></div>
+    <div class="popup js-popup">
+        <div class="popup__title">Регистрация завершена</div>
+        <div class="popup__content">
+            Вы успешно зарегистрировались на сайте<br>
+            На указанный Вами при регистрации адрес электронной почты отправлено уведомление.
+
+            <div class="popup__content__buttons">
+                <a href="#" class="mt25 btn btn_arr js-popup-close">Продолжить</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-wrap">
+
+        <!-- @include "blocks/_header.html" -->
+
+        <div class="page-content c">
+            <div class="page-content__michelin page-content__michelin_border page-content__michelin_top"></div>
+
+            <div class="page-content__breadcrumbs">
+                <a href="">Главная</a> /
+                <a href="">Личный кабинет участника акции</a>
+            </div>
+            <div class="page-content__heading">Личный кабинет</div>
+
+            <div class="account">
+                <div class="account__user c">
+                    <div class="account__user__icon l">
+                        <i class="icon icon_user"></i>
+                    </div>
+                    <div class="account__user__info l">
+                        <div class="account__user__info__name">Калашников Виталий Викторович</div>
+                        <div class="account__user__info__post">Руководитель отдела продаж</div>
+                    </div> <!-- /.account__user__info -->
+                </div> <!-- /.account-user -->
+
+                <div class="account__coupons c">
+                    <div class="account__coupons__count l">
+                        <i class="icon icon_coupons"></i>
+                        <span class="account__coupons__count__value">120</span><br>
+                        <span class="account__coupons__count__text">купонов</span>
+                    </div>
+                    <a href="" class="account__coupons__btn btn btn_arr r">Добавить купон</a>
+                </div> <!-- ./account__counpons -->
+
+                <div class="account__contacts">
+                    <div class="account__contacts__item">
+                        <i class="icon icon_address"></i>
+                        Москва, ул. Проектируемый проезд 3486, д.44 стр.2
+                    </div> <!-- /.account__contacts__item -->
+                    <div class="account__contacts__item">
+                        <i class="icon icon_phone"></i>
+                        +7 (985) 211-9088
+                    </div> <!-- /.account__contacts__item -->
+
+                </div>
+            </div> <!-- /.account -->
+
+            <!-- CHANGED -->
+            <div class="presents" id="presents">
+            <!-- /CHANGED -->
+                <form action="" class="presents-form">
+                    
+                    <div class="present-list">
+
+                        <!-- CHANGED -->
+                        <div class="present-item js-present-item" data-price="50">
+                        <!-- /CHANGED -->
+                            <div class="present-item__image">
+                                <img src="photos/presents/1.png" alt="">
+                            </div>
+                            <div class="present-item__body">
+                                <label class="present-item__body__info">
+                                    <span class="present-item__body__info__title">Apple iPnone 4S</span>
+                                    <span class="present-item__body__info__points">50 баллов</span>
+                                </label>
+                                <!-- CHANGED -->
+                                <input type="text" class="present-item__body__count js-present-item-count" value="0">
+                                <!-- /CHANGED -->
+                            </div> <!-- /.present-item__body -->
+                        </div> <!-- /.present-item -->
+
+                        <div class="present-item js-present-item" data-price="10">
+                            <div class="present-item__image">
+                                <img src="photos/presents/2.png" alt="">
+                            </div>
+                            <div class="present-item__body">
+                                <label class="present-item__body__info">
+                                    <span class="present-item__body__info__title">Apple iPnone 4SApple iPnone 4SApple iPnone 4SApple iPnone 4SApple iPnone 4SApple iPnone 4S</span>
+                                    <span class="present-item__body__info__points">10 баллов</span>
+                                </label>
+                                <input type="text" class="present-item__body__count js-present-item-count" value="0">
+                            </div> <!-- /.present-item__body -->
+                        </div> <!-- /.present-item -->
+
+                        <div class="present-item js-present-item" data-price="5">
+                            <div class="present-item__image">
+                                <img src="photos/presents/3.png" alt="">
+                            </div>
+                            <div class="present-item__body">
+                                <label class="present-item__body__info">
+                                    <span class="present-item__body__info__title">Apple iPnone 4S</span>
+                                    <span class="present-item__body__info__points">5 баллов</span>
+                                </label>
+                                <input type="text" class="present-item__body__count js-present-item-count" value="0">
+                            </div> <!-- /.present-item__body -->
+                        </div> <!-- /.present-item -->
+
+                    </div> <!-- /.present-list -->
+
+                    <div class="page-content__hr page-content__hr_wide mt35"></div>
+
+                    <!-- CHANGED -->
+                    <div class="page-content__subheading" id="presents-info"></div>
+                    <!-- /CHANGED -->
+
+                    <a href="" class="btn btn_arr mt20">Добавить купон</a>
+
+                    <div class="page-content__hr page-content__hr_wide mt30"></div>
+
+                    <div class="form-row">
+                        <input type="checkbox" name="" id="">
+                        <label for="" class="inline">Отправить призы по адресу указанному при регистрации</label>
+                    </div>
+                    <div class="form-row mt5">
+                        <input type="checkbox" name="" id="" checked>
+                        <label for="" class="inline">Указать свой адрес</label>
+                    </div>
+
+                    <fieldset class="mt0">
+                        <div class="form-col form-col_grid-3 l">
+                            <div class="form-row">
+                                <label for="">Город</label>
+                                <input type="text" name="" id="">
+                            </div>
+                            <div class="form-row">
+                                <label for="">Фактический адрес доставки</label>
+                                <input type="text" name="" id="">
+                            </div>
+                        </div>
+                        <div class="form-col form-col_grid-3 l">
+                            <div class="form-row">
+                                <label for="">Контактный телефон</label>
+                                <input type="text" name="" id="">
+                            </div>
+                            <div class="form-row">
+                                <label for="">Контактный лицо</label>
+                                <input type="text" name="" id="">
+                            </div>
+                        </div>
+                        <div class="form-col form-col_grid-3 l">
+                            <div class="form-row">
+                                <label for="">Дополнительные комментарии</label>
+                                <textarea name="" id=""></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="page-content__hr page-content__hr_wide"></div>
+
+                    <div class="page-content__buttons c">
+                        <a href="" class="btn btn_grey btn_arr btn_arr-invert l">Назад</a>
+                        <a href="" class="btn btn_arr r">Отправить призы</a>
+                    </div>
+
+                </form> <!-- /.presents-form -->
+            </div> <!-- /.presents -->
+        </div> <!-- /.page-content -->
+
+        <!-- @include "blocks/_footer.html" -->
+        
+        
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+    <script defer src="js/script.js"></script>
+    
+</body>
+</html>

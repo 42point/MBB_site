@@ -1,0 +1,99 @@
+body.print {
+    background: none;
+}
+
+@scale: 0.55;
+@width: 1240px * @scale;
+@print-coupon-height: 441px * @scale;
+@print-coupon-width: @width;
+
+.print-page {
+    margin: 0 auto;
+    width: @width;
+}
+
+.print-coupon {
+    background: url(../images/coupon_print.jpg) 0 0 no-repeat;
+    height: @print-coupon-height;
+    position: relative;
+    width: @width;
+
+    &__header {
+        color: #fff;
+        font-size: 21px * @scale;
+        font-weight: bold;
+        height: round(66px * @scale);
+        margin-top: round(45px * @scale);
+        padding: 10px;
+        position: relative;
+        text-align: right;
+        text-shadow: 1px 1px #000;
+        text-transform: uppercase;
+        // width: round(480px * @scale);
+    }
+
+    &__hr {
+        height: round(@width / 22);
+        padding: 0;
+    }
+
+    &__text {
+        height: round(230px * @scale);
+        font-size: round(16px * @scale);
+        padding-left: round(20px * @scale);
+        width: round(410px * @scale);
+
+        strong {
+            display: block;
+            font-weight: bold;
+            margin-bottom: round(5px * @scale);
+            text-transform: uppercase;
+        }
+        a {
+            color: #105caa;
+            text-decoration: underline;
+        }
+    }
+
+    &__form {
+        height: round(230px * @scale);
+        width: round(310px * @scale);
+
+        &__label {
+            font-size: round(12px * @scale);
+            font-weight: bold;
+            color: #333333;
+            text-transform: uppercase;
+        }
+        &__value {
+            color: #666;
+            font-size: round(18px * @scale);
+            font-weight: bold;
+        }
+        &__hr {
+            background: #cecece;
+            height: round(1px * @scale);
+            margin: round(15px * @scale) 0 round(20px * @scale) 0;
+        }
+
+        &__code {
+            border-radius: round(3px * @scale);
+            border: round(2px * @scale) solid #d4d4d4;
+            font-size: round(36px * @scale);
+            font-weight: bold;
+            height: round(44px * @scale);
+            line-height: round(44px * @scale);
+            text-align: center;
+            width: round(305px * @scale);
+        }
+    }
+
+    &__hint {
+        bottom: round(45px * @scale);
+        font-size: round(16px * @scale);
+        height: round(35px * @scale);
+        color: #666;
+        text-align: center;
+        width: 100%;
+    }
+}

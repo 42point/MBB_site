@@ -1,0 +1,27 @@
+.box-sizing(@value: border-box) {
+    -webkit-box-sizing: @value;
+    -moz-box-sizing: @value;
+    box-sizing: @value;
+}
+
+.gradient (@from, @to) {
+    background-color: @from;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+    background-image: -webkit-linear-gradient(top, @from, @to);
+    background-image:    -moz-linear-gradient(top, @from, @to);
+    background-image:      -o-linear-gradient(top, @from, @to);
+    background-image:         linear-gradient(to bottom, @from, @to);
+}
+
+.box-shadow(@value) {
+    -webkit-box-shadow: @value;
+    -moz-box-shadow: @value;
+    box-shadow: @value;
+}
+
+.placeholder(@color: #ccc, @font-style: normal) {
+    &::-webkit-input-placeholder { color: @color; font-style: @font-style; }
+    &:-moz-placeholder { color: @color; font-style: @font-style; }
+    &::-webkit-input-placeholder { color: @color; font-style: @font-style; }
+    &:-moz-placeholder { color: @color; font-style: @font-style; }
+}
