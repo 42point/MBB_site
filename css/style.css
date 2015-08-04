@@ -1028,6 +1028,10 @@ a {
   font-size: 12px;
   line-height: 1.5;
 }
+.page-content__text_features {
+  float: left;
+}
+
 .page-content__text a {
   border-bottom: 1px solid;
 }
@@ -1973,8 +1977,22 @@ input.tire-request-form__input {
   text-decoration: underline;
 }
 
+.features-table-help {
+  float: right;
+  width: 350px;
+}
+  .features-table-help__title {
+    font-size: 16px;
+  }
+  .features-table-help dt {
+    font-weight: bold;
+  }
+  .features-table-help dd {
+    margin-bottom: 10px;
+  }
+
 .features-table {
-  min-width: 500px;
+  width: 500px;
 }
 .features-table th {
   background-color: #99b2d6;
