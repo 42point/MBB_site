@@ -145,7 +145,6 @@
 
         function validate() {
             var rows = form.find('.form-row:not(.form-row_submit)');
-<<<<<<< Updated upstream
             var count = 0;
 
             rows.each(function (i, row) {
@@ -157,38 +156,6 @@
             });
 
             var valid = count >= 5;
-=======
-<<<<<<< HEAD
-            var validRowsCount = 0;
-
-            rows.each(function (i, row) {
-                var validRow = true;
-                $('select, input', row).each(function (j, input) {
-                    if (!$(input).val()) {
-                        validRow = false;
-                    }
-                });
-
-                if (validRow) {
-                    validRowsCount++;
-                }
-            });
-
-            var valid = validRowsCount >= 5;
-=======
-            var count = 0;
-
-            rows.each(function (i, row) {
-                var model = $('.tire-request-form__model', row).val();
-                var quantity = Number($('.tire-request-form__quantity', row).val());
-                if (model) {
-                    count += quantity;
-                }
-            });
-
-            var valid = count >= 5;
->>>>>>> origin/master
->>>>>>> Stashed changes
             button.attr('disabled', !valid);
         };
 
@@ -196,13 +163,6 @@
             var row = $(template.html());
             row.insertBefore(submitRow);
             row.find('.js-customselect').customSelect();
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-            console.log(row.find('.js-custom-select').get());
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
         }
 
     });
