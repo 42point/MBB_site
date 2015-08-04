@@ -122,22 +122,48 @@
     $('.tire-request-form').each(function (i, form) {
         form = $(form);
         var button = form.find('.tire-request-form__add-button');
+        var positionButton = form.find('.tire-request-form__add-position-button');
         var inputs = form.find('select');
+
+        var submitRow = form.find('.form-row_submit');
+        var template = form.find('script[type="text/template"]');
+
+        form.on('change', ':input', function () {
+            validate();
+        });
 
         inputs.on('change', function () {
             validate();
         });
 
+        positionButton.on('click', function (evt) {
+            evt.preventDefault();
+            addRow();
+        });
+
+        addRow();
+
         function validate() {
-            var valid = true;
-            inputs.each(function (i, input) {
-                if (!$(input).val()) {
-                    valid = false;
+            var rows = form.find('.form-row:not(.form-row_submit)');
+            var count = 0;
+
+            rows.each(function (i, row) {
+                var model = $('.tire-request-form__model', row).val();
+                var quantity = Number($('.tire-request-form__quantity', row).val());
+                if (model) {
+                    count += quantity;
                 }
             });
 
+            var valid = count >= 5;
             button.attr('disabled', !valid);
         };
+
+        function addRow() {
+            var row = $(template.html());
+            row.insertBefore(submitRow);
+            row.find('.js-customselect').customSelect();
+        }
 
     });
 
