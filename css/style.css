@@ -1938,6 +1938,7 @@ body.print {
 
 .tire-request-form {
   padding-bottom: 30px;
+  width: 500px;
 }
 .tire-request-form__inputs {
   width: 415px;
