@@ -1872,6 +1872,9 @@ body.print {
   margin: 0 auto;
   width: 682px;
 }
+  .print-page_album {
+    width: 900px;
+  }
 .print-cert {
   background: url(../images/cert_print.jpg) 0 0 no-repeat;
   font-family: Impact, sans-serif;
@@ -2015,4 +2018,30 @@ input.tire-request-form__input {
 }
 .features-table input[type="text"] {
   width: 100px;
+}
+
+.table-print {
+  border-collapse: collapse;
+  font-size: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.table-print td,
+.table-print th {
+  border: 1px solid #ccc;
+  vertical-align: middle;
+  padding: 3px;
+}
+.table-print .table-print {
+  text-align: center;
+}
+
+.table-print__title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.print-text {
+  font-size: 10px;
+  margin-bottom: 10px;
 }
