@@ -2101,6 +2101,9 @@ input.tire-request-form__input {
 .table-print .key {
   background: #ddd;
 }
+.table-print .crm-value {
+  background: #c4ffc0;
+}
 .table-print .center {
   text-align: center;
 }
