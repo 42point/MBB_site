@@ -2039,13 +2039,25 @@ input.tire-request-form__input {
 .table-print_total td:first-child {
     width: 90%;
 }
-.table-print_no-border th,
-.table-print_no-border td {
+.table-print_no-border > th,
+.table-print_no-border > td,
+.table-print_no-border > tr > th,
+.table-print_no-border > tr > td,
+.table-print_no-border > thead > tr > th,
+.table-print_no-border > tbody > tr > td {
   border: none;
 }
 .table-print_invoice-list tr:first-child td,
 .table-print_invoice-list tr:nth-child(2) td {
   width: 30px;
+}
+.table-print_no-padding > th,
+.table-print_no-padding > td,
+.table-print_no-padding > tr > th,
+.table-print_no-padding > tr > td,
+.table-print_no-padding > thead > tr > th,
+.table-print_no-padding > tbody > tr > td {
+  padding: 0;
 }
 .table-print_invoice-list tr:first-child td:first-child {
   width: 150px;
@@ -2084,4 +2096,11 @@ input.tire-request-form__input {
   float: right;
   border: 1px solid #000;
   padding: 5px;
+}
+
+.table-print .key {
+  background: #ddd;
+}
+.table-print .center {
+  text-align: center;
 }
