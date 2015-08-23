@@ -174,4 +174,95 @@
         }
     });
 
+    if ($('#map').length) {
+        var wrap = $('#map-wrap');
+        var outlets = wrap.data('outlets');
+
+        ymaps.ready(function () {
+            var DEFAULT_MAP_ZOOM = 4;
+            var center = [59.18579387, 58.37602542];
+
+            var map = window.map = new ymaps.Map('map', {
+                center: center,
+                zoom: DEFAULT_MAP_ZOOM
+            });
+            var input = $('#map-input');
+
+            input.on('input', function () {
+                var val = input.val().trim();
+                if (!val) {
+                    showAll();
+                } else {
+                    filter(val);
+                }
+            });
+
+            showAll();
+
+            function filter(val) {
+                val = val.toLowerCase();
+                map.geoObjects.removeAll();
+                outlets.forEach(function (outlet) {
+                    var city = outlet.city.toLowerCase();
+                    addPlacemark(outlet, city.indexOf(val) !== -1);
+                });
+            }
+
+            function showAll() {
+                map.geoObjects.removeAll();
+                outlets.forEach(function (outlet) {
+                    addPlacemark(outlet, true)
+                });
+            }
+
+            function addPlacemark(outlet, isActive) {
+                var iconColor = isActive ? '#0095b6' : '#ccc';
+
+                var pm = new ymaps.Placemark(outlet.coords, {
+                    balloonContentHeader: outlet.city,
+                    balloonContent: outlet.description
+                }, {
+                    preset: 'islands#dotIcon',
+                    iconColor: iconColor
+                });
+                map.geoObjects.add(pm);
+            }
+        })
+    }
+
+        // this.initMap = function () {
+        //     var center = this.data.flatCoords || rostovCoords;
+        //     window.map = this.map = new ymaps.Map('map', {
+        //         center: center,
+        //         zoom: DEFAULT_MAP_ZOOM
+        //     });
+
+        //     if (this.data.flatCoords) {
+        //         this.addPlacemark(this.data.flatCoords);
+        //     }
+        // }
+
+        // this.after('initialize', function () {
+        //     this.address = this.select('addressSel');
+        //     this.coords = this.select('coordsSel');
+        //     this.on(this.address, 'change', this.onAddressChange);
+        //     this.data = this.$node.data();
+
+        //     var that = this;
+
+        //     window.onload = function () {
+        //         setTimeout(function () {
+        //             that.initMap();
+        //         }, 1000);
+        //     }
+        // });
+
+
+
+
+
+
+
+
+
 })();

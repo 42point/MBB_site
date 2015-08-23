@@ -2110,3 +2110,8 @@ input.tire-request-form__input {
 .table-print .center {
   text-align: center;
 }
+
+.map {
+  height: 500px;
+  margin-top: 20px;
+}
