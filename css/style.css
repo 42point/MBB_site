@@ -803,6 +803,9 @@ body {
   background-image: -o-linear-gradient(top, #d5dfe7, #ffffff);
   background-image: linear-gradient(to bottom, #d5dfe7, #ffffff);
 }
+body.pdf {
+  background: #fff !important;
+}
 a {
   color: #5477af;
 }
