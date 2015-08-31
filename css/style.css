@@ -803,6 +803,9 @@ body {
   background-image: -o-linear-gradient(top, #d5dfe7, #ffffff);
   background-image: linear-gradient(to bottom, #d5dfe7, #ffffff);
 }
+body.pdf {
+  background: #fff !important;
+}
 a {
   color: #5477af;
 }
@@ -1782,7 +1785,7 @@ a {
   width: 34px;
 }
 body.print {
-  background: none;
+  background: none !important;
 }
 .print-page {
   margin: 0 auto;
@@ -2023,15 +2026,25 @@ input.tire-request-form__input {
   width: 100px;
 }
 
-.table-print {
+.table-print,
+.table-print_no-border {
   border-collapse: collapse;
   font-size: 10px;
   margin-bottom: 10px;
   width: 100%;
 }
-.table-print td,
-.table-print th {
+.table-print > th,
+.table-print > td,
+.table-print > tr > th,
+.table-print > tr > td,
+.table-print > thead > tr > th,
+.table-print > tbody > tr > td {
   border: 1px solid #000;
+  vertical-align: middle;
+  padding: 3px;
+}
+.table-print_no-border td,
+.table-print_no-border th {
   vertical-align: middle;
   padding: 3px;
 }
@@ -2041,14 +2054,6 @@ input.tire-request-form__input {
 }
 .table-print_total td:first-child {
     width: 90%;
-}
-.table-print_no-border > th,
-.table-print_no-border > td,
-.table-print_no-border > tr > th,
-.table-print_no-border > tr > td,
-.table-print_no-border > thead > tr > th,
-.table-print_no-border > tbody > tr > td {
-  border: none;
 }
 .table-print_invoice-list tr:first-child td,
 .table-print_invoice-list tr:nth-child(2) td {
