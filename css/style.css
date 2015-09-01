@@ -795,7 +795,7 @@ html,
 body {
   min-height: 100%;
 }
-body {
+body.gradient {
   background-color: #d5dfe7;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#d5dfe7), to(#ffffff));
   background-image: -webkit-linear-gradient(top, #d5dfe7, #ffffff);
@@ -2033,12 +2033,8 @@ input.tire-request-form__input {
   margin-bottom: 10px;
   width: 100%;
 }
-.table-print > th,
-.table-print > td,
-.table-print > tr > th,
-.table-print > tr > td,
-.table-print > thead > tr > th,
-.table-print > tbody > tr > td {
+.table-print th,
+.table-print td {
   border: 1px solid #000;
   vertical-align: middle;
   padding: 3px;
@@ -2074,14 +2070,10 @@ input.tire-request-form__input {
   text-align: center;
 }
 .table-print__signature {
+  border-bottom: 1px solid #000;
   width: 150px;
   vertical-align: bottom !important;
 }
-  .table-print__signature:after {
-    border-bottom: 1px solid #000;
-    content: '';
-    display: block;
-  }
 
 .table-print__title,
 .print-title {
